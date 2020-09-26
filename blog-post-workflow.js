@@ -247,8 +247,8 @@ Promise.allSettled(promiseArray).then((results) => {
       const template = core.getInput('template');
       const postListMarkdown = postsArray.reduce((acc, cur, index) => {
         if (template === 'default') {
-          // Default template: - [$title]($url)
-          return acc + `\n- [${cur.title}](${cur.url})` + (((index + 1) === postsArray.length) ? '\n' : '');
+          // Default template: 💬 [$title]($url)
+          return acc + `\n💬 Blogged [${cur.title}](${cur.url}) </br>`;
         } else {
           // Building with custom template
           const date = dateFormat(cur.date, core.getInput('date_format')); // Formatting date
